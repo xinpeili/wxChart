@@ -27,7 +27,9 @@ $('.login').on('click', function () {
         console.log(data);
         $('.login-box').css('display', 'none');
         $('.chart').css('display', 'block');
-        var userStr = `<ul><li class="me"><img src="${data.data.imgUrl}" /><span>${data.data.userName}</span><li>`;
+
+        // 渲染用户列表
+        var userStr = `<ul><li class="me"><img src="${data.data.imgUrl}" /><span>${data.data.userName}</span></li>`;
         for (var i = 0; i < data.user.length; i ++) {
             if (data.user[i].userName != data.data.userName) {
                 userStr += `<li><img src="${data.user[i].imgUrl}" /><span>${data.user[i].userName}</span></li>`;
@@ -35,5 +37,30 @@ $('.login').on('click', function () {
         }
         userStr += '</ul>';
         $('.user-list').html(userStr);
+
+        // 发送消息
+        // $('.send').on('click', function () {
+        //     var msg = $('.text input').val();
+        //     sendMsg(msg);
+        // });
+        // $('.text input').on('keydown', function (e) {
+        //     if (e.keyCode == 13) {
+        //         var msg = $(this).val();
+        //         sendMsg(msg);
+        //     }
+        // })
+        // function sendMsg(msg) {
+        //     var div = document.createElement('div');
+        //     var img = new Image();
+        //     var span = document.createElement('span');
+        //     img.src = data.data.imgUrl;
+        //     span.html = msg;
+        //     div.className = 'self';
+        //     div.appendChild(img);
+        //     div.appendChild(span);
+        // }
+
     })
 })
+
+

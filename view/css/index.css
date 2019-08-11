@@ -70,6 +70,7 @@ html body .wrapper {
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 0;
+    box-sizing: border-box;
 }
 .chart .user-list {
     display: inline-block;
@@ -87,12 +88,19 @@ html body .wrapper {
     box-sizing: border-box;
     line-height: 40px;
     padding: 0 10px;
-    overflow: hidden;
+    margin: 10px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.chart .user-list ul li:hover {
+    background: #000;
 }
 .chart .user-list ul li.me {
     border-bottom: 1px solid #ccc;
     line-height: 50px;
     height: 50px;
+    margin: 0;
 }
 .chart .user-list ul li.me img {
     width: 40px;
@@ -111,7 +119,7 @@ html body .wrapper {
 }
 .chart .title {
     display: inline-block;
-    width: 600px;
+    width: 598px;
     height: 50px;
     color: #fff;
     text-align: center;
@@ -119,4 +127,62 @@ html body .wrapper {
     font-size: 22px;
     background: #6f6f6f;
     vertical-align: top;
+}
+.chart .content {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    height: 489px;
+    width: 598px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+.chart .content>div {
+    margin-top: 16px;
+}
+.chart .content>div img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chart .content>div .text-box {
+    display: inline-block;
+}
+.chart .content>div .text-box .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+.chart .content>div .text-box .content-text {
+    
+}
+.chart .text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 598px;
+    height: 60px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+.chart .text input {
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.chart .text .send {
+    width: 80px;
+    height: 40px;
+    border: 1px solid rgb(21, 81, 248);
+    background: rgb(21, 81, 248);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
 }
