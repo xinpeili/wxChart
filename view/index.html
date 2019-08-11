@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wxChart</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="login-box" style="display: block">
+            <h3>web聊天室登陆入口</h3>
+            <span>用户名</span>
+            <input type="text" placeholder="请输入用户名" />
+            <img class="error" src="./img/删除2.png" alt="">
+            <button class="login">登陆</button>
+        </div>
+        <div class="chart" style="display: none">
+            <div class="user-list">
+                
+            </div>
+            <div class="title">web聊天室</div>
+            <div class="content"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
