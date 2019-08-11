@@ -1,16 +1,24 @@
 // 链接socketio服务器
 var socket = io('http://localhost:12306');
 
+// 选择头像
+$('.touxiang img').on('click', function () {
+    $('.active').removeClass('active');
+    $(this).addClass('active');
+})
+
 // 获取用户名
 $('.login').on('click', function () {
     var userName = $('.login-box input').val();
+    var imgUrl = $('.active').attr('src');
     if (!userName) {
         $('.error').css('display', 'inline-block');
         return ;
     }
     $('.error').css('display', 'none');
     socket.emit('login', {
-        userName: userName
+        userName: userName,
+        imgUrl: imgUrl
     });
     socket.on('loginError', data => {
         alert(data.msg);
@@ -19,10 +27,10 @@ $('.login').on('click', function () {
         console.log(data);
         $('.login-box').css('display', 'none');
         $('.chart').css('display', 'block');
-        var userStr = '<ul><li class="me">' + data.data.userName + '<li>';
+        var userStr = `<ul><li class="me"><img src="${data.data.imgUrl}" /><span>${data.data.userName}</span><li>`;
         for (var i = 0; i < data.user.length; i ++) {
-            if (data.user[i] != data.data.userName) {
-                userStr += '<li>' + data.user[i] + '</li>'
+            if (data.user[i].userName != data.data.userName) {
+                userStr += `<li><img src="${data.user[i].imgUrl}" /><span>${data.user[i].userName}</span></li>`;
             }
         }
         userStr += '</ul>';

@@ -30,6 +30,21 @@ html body .wrapper {
     margin-left: 10px;
     margin-top: 20px;
 }
+.login-box .touxiang {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+.login-box .touxiang img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.login-box .touxiang img.active {
+    border: 1px solid #abcdef;
+}
 .login-box button {
     width: 100%;
     background: #abcdef;
@@ -78,6 +93,21 @@ html body .wrapper {
     border-bottom: 1px solid #ccc;
     line-height: 50px;
     height: 50px;
+}
+.chart .user-list ul li.me img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.chart .user-list ul li img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.chart .user-list ul li span {
+    vertical-align: top;
+    margin-left: 10px;
 }
 .chart .title {
     display: inline-block;
