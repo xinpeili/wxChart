@@ -144,7 +144,7 @@ html body .wrapper {
     margin-top: 16px;
 }
 .chart .content .self {
-    float: right;
+    text-align: right;
 }
 .chart .content>div img {
     width: 40px;

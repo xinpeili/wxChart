@@ -18,11 +18,16 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
     socket.on('login', data => {
-        if (!user.includes(data.userName)) {
+        if (user.length != 0) {
+            if (!user.find(item => item.userName == data.userName)) {
+                user.push(data);
+                socket.emit('loginSuccess', {data, user});
+            } else {
+                socket.emit('loginError', {msg: '该用户已在聊天室内，请切换账号登陆'});
+            }
+        } else {
             user.push(data);
             socket.emit('loginSuccess', {data, user});
-        } else {
-            socket.emit('loginError', {msg: '该用户已在聊天室内，请切换账号登陆'});
         }
     })
 })

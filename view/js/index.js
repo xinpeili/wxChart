@@ -39,26 +39,37 @@ $('.login').on('click', function () {
         $('.user-list').html(userStr);
 
         // 发送消息
-        // $('.send').on('click', function () {
-        //     var msg = $('.text input').val();
-        //     sendMsg(msg);
-        // });
-        // $('.text input').on('keydown', function (e) {
-        //     if (e.keyCode == 13) {
-        //         var msg = $(this).val();
-        //         sendMsg(msg);
-        //     }
-        // })
-        // function sendMsg(msg) {
-        //     var div = document.createElement('div');
-        //     var img = new Image();
-        //     var span = document.createElement('span');
-        //     img.src = data.data.imgUrl;
-        //     span.html = msg;
-        //     div.className = 'self';
-        //     div.appendChild(img);
-        //     div.appendChild(span);
-        // }
+        $('.send').on('click', function () {
+            var msg = $('.text input').val();
+            sendMsg(msg);
+        });
+        $('.text input').on('keydown', function (e) {
+            if (e.keyCode == 13) {
+                var msg = $(this).val();
+                sendMsg(msg);
+            }
+        })
+        function sendMsg(msg) {
+            var content = $('.content');
+            var div = document.createElement('div');
+            var img = new Image();
+            var div1 = document.createElement('div');
+            var name = document.createElement('div');
+            var contentText = document.createElement('div');
+
+            img.src = data.data.imgUrl;
+            name.innerHTML = data.data.userName;
+            contentText.innerHTML = msg;
+            div.className = 'self';
+            div1.className = 'text-box';
+            name.className = 'name';
+            contentText.className = 'content-text';
+            div.appendChild(img);
+            div.appendChild(div1);
+            div1.appendChild(name);
+            div1.appendChild(contentText);
+            content.append(div);
+        }
 
     })
 })
