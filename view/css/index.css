@@ -129,6 +129,8 @@ html body .wrapper {
     vertical-align: top;
 }
 .chart .content {
+    padding: 5px 10px;
+    box-sizing: border-box;
     position: absolute;
     right: 0;
     top: 50px;
@@ -141,20 +143,42 @@ html body .wrapper {
 .chart .content>div {
     margin-top: 16px;
 }
+.chart .content .self {
+    float: right;
+}
 .chart .content>div img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
+.chart .content .self img {
+    float: right;
+}
 .chart .content>div .text-box {
     display: inline-block;
+    max-width: 200px;
+    margin: 0 10px;
+}
+.chart .content .self .text-box {
+    text-align: right;
 }
 .chart .content>div .text-box .name {
     font-size: 18px;
     font-weight: bold;
 }
 .chart .content>div .text-box .content-text {
-    
+    text-align: left;
+    background: rgb(217, 218, 217);
+    padding: 5px 10px;
+    border-radius: 10px;
+    line-height: 22px;
+}
+.chart .content .self .text-box .content-text {
+    text-align: left;
+    background: rgb(151, 201, 248);
+    padding: 5px 10px;
+    border-radius: 10px;
+    line-height: 22px;
 }
 .chart .text {
     position: absolute;
@@ -178,6 +202,7 @@ html body .wrapper {
     margin-top: 10px;
 }
 .chart .text .send {
+    vertical-align: bottom;
     width: 80px;
     height: 40px;
     border: 1px solid rgb(21, 81, 248);
