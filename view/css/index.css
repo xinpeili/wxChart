@@ -143,6 +143,12 @@ html body .wrapper {
 .chart .content>div {
     margin-top: 16px;
 }
+.chart .content .system {
+    margin: 15px 0;
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+}
 .chart .content .self {
     text-align: right;
 }

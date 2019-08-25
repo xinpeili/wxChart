@@ -22,12 +22,19 @@ io.on('connection', function (socket) {
             if (!user.find(item => item.userName == data.userName)) {
                 user.push(data);
                 socket.emit('loginSuccess', {data, user});
+                // 广播消息
+                io.emit('addUser', data);
             } else {
                 socket.emit('loginError', {msg: '该用户已在聊天室内，请切换账号登陆'});
             }
         } else {
             user.push(data);
             socket.emit('loginSuccess', {data, user});
+            io.emit('addUser', data);
         }
+    })
+
+    socket.on('disconnect', () => {
+        
     })
 })
